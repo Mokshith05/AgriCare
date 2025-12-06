@@ -17,6 +17,7 @@ import {
   BookOpen,
   ShieldCheck,
   ClipboardList,
+  Wand2,
 } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 
@@ -45,6 +46,11 @@ export function AppSidebar() {
       labelKey: 'fieldLogbook',
       icon: ClipboardList,
     },
+    {
+      href: '/recommendations',
+      labelKey: 'recommendations',
+      icon: Wand2,
+    }
   ];
 
   return (

@@ -25,6 +25,11 @@ import {
   type SearchEncyclopediaInput,
   type SearchEncyclopediaOutput,
 } from '@/ai/flows/search-encyclopedia';
+import {
+  recommendCrops as recommendCropsFlow,
+  type RecommendCropsInput,
+  type RecommendCropsOutput,
+} from '@/ai/flows/recommend-crops';
 
 export async function analyzeCropImage(
   input: AnalyzePhotoAndSuggestTreatmentsInput
@@ -124,6 +129,25 @@ export async function performEncyclopediaSearch(
     return {
       success: false,
       error: 'An unexpected error occurred during the search. Please try again.',
+    };
+  }
+}
+
+export async function recommendCrops(
+  input: RecommendCropsInput
+): Promise<{
+  success: boolean;
+  data?: RecommendCropsOutput;
+  error?: string;
+}> {
+  try {
+    const result = await recommendCropsFlow(input);
+    return { success: true, data: result };
+  } catch (error) {
+    console.error('Error getting crop recommendations:', error);
+    return {
+      success: false,
+      error: 'Failed to get crop recommendations. Please try again.',
     };
   }
 }

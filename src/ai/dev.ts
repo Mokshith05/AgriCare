@@ -9,3 +9,4 @@ import '@/ai/flows/chat-with-ai';
 import '@/ai/flows/text-to-speech';
 import '@/ai/flows/get-weather-data';
 import '@/ai/flows/search-encyclopedia';
+import '@/ai/flows/recommend-crops';
