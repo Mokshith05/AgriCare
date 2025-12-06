@@ -30,6 +30,11 @@ import {
   type RecommendCropsInput,
   type RecommendCropsOutput,
 } from '@/ai/flows/recommend-crops';
+import {
+  searchPreventiveCareTips,
+  type SearchPreventiveCareTipsInput,
+  type SearchPreventiveCareTipsOutput,
+} from '@/ai/flows/search-preventive-care-tips';
 
 export async function analyzeCropImage(
   input: AnalyzePhotoAndSuggestTreatmentsInput
@@ -148,6 +153,25 @@ export async function recommendCrops(
     return {
       success: false,
       error: 'Failed to get crop recommendations. Please try again.',
+    };
+  }
+}
+
+export async function getPreventiveCareTips(
+  input: SearchPreventiveCareTipsInput
+): Promise<{
+  success: boolean;
+  data?: SearchPreventiveCareTipsOutput;
+  error?: string;
+}> {
+  try {
+    const result = await searchPreventiveCareTips(input);
+    return { success: true, data: result };
+  } catch (error) {
+    console.error('Error getting preventive care tips:', error);
+    return {
+      success: false,
+      error: 'Failed to get preventive care tips. Please try again.',
     };
   }
 }

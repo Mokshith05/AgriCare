@@ -63,7 +63,10 @@ const translations: Record<string, Record<string, any>> = {
     preventiveCare: {
       title: 'Preventive Care',
       pageTitle: 'Crop Care Guide',
-      pageDescription: 'Proactive tips to keep your crops healthy and thriving.'
+      pageDescription: 'Proactive tips to keep your crops healthy and thriving.',
+      searchPlaceholder: 'Search for a crop to get care tips...',
+      searchErrorTitle: 'Search Failed',
+      searchErrorDescription: 'Could not fetch care tips. Please try again.',
     },
     logbook: {
       title: 'Field Logbook',
@@ -156,7 +159,10 @@ const translations: Record<string, Record<string, any>> = {
     preventiveCare: {
       title: 'निवारक देखभाल',
       pageTitle: 'फसल देखभाल गाइड',
-      pageDescription: 'आपकी फसलों को स्वस्थ और समृद्ध रखने के लिए सक्रिय सुझाव।'
+      pageDescription: 'आपकी फसलों को स्वस्थ और समृद्ध रखने के लिए सक्रिय सुझाव।',
+      searchPlaceholder: 'देखभाल युक्तियों के लिए फसल खोजें...',
+      searchErrorTitle: 'खोज विफल',
+      searchErrorDescription: 'देखभाल युक्तियाँ प्राप्त नहीं की जा सकीं। कृपया पुनः प्रयास करें।',
     },
     logbook: {
       title: 'फील्ड लॉगबुक',
@@ -249,7 +255,10 @@ const translations: Record<string, Record<string, any>> = {
     preventiveCare: {
       title: 'నివారణ సంరక్షణ',
       pageTitle: 'పంట సంరక్షణ గైడ్',
-      pageDescription: 'మీ పంటలను ఆరోగ్యంగా మరియు అభివృద్ధి చెందడానికి చురుకైన చిట్కాలు.'
+      pageDescription: 'మీ పంటలను ఆరోగ్యంగా మరియు అభివృద్ధి చెందడానికి చురుకైన చిట్కాలు.',
+      searchPlaceholder: 'సంరక్షణ చిట్కాలను పొందడానికి ఒక పంట కోసం శోధించండి...',
+      searchErrorTitle: 'శోధన విఫలమైంది',
+      searchErrorDescription: 'సంరక్షణ చిట్కాలను పొందడంలో విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.',
     },
     logbook: {
       title: 'ఫీల్డ్ లాగ్‌బుక్',
@@ -342,7 +351,10 @@ const translations: Record<string, Record<string, any>> = {
     preventiveCare: {
       title: 'தடுப்பு பராமரிப்பு',
       pageTitle: 'பயிர் பராமரிப்பு வழிகாட்டி',
-      pageDescription: 'உங்கள் பயிர்களை ஆரோக்கியமாகவும் செழிப்பாகவும் வைத்திருக்க செயல்திட்ட குறிப்புகள்.'
+      pageDescription: 'உங்கள் பயிர்களை ஆரோக்கியமாகவும் செழிப்பாகவும் வைத்திருக்க செயல்திட்ட குறிப்புகள்.',
+      searchPlaceholder: 'பராமரிப்பு குறிப்புகளைப் பெற ஒரு பயிரைத் தேடுங்கள்...',
+      searchErrorTitle: 'தேடல் தோல்வியுற்றது',
+      searchErrorDescription: 'பராமரிப்பு குறிப்புகளைப் பெற முடியவில்லை. ദയവായി വീണ്ടും ശ്രമിക്കുക.',
     },
     logbook: {
       title: 'புல பதிவு புத்தகம்',
