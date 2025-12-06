@@ -19,6 +19,7 @@ import {
   ClipboardList,
   Wand2,
   Calculator,
+  CloudSun,
 } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 
@@ -31,6 +32,11 @@ export function AppSidebar() {
       href: '/',
       labelKey: 'dashboard',
       icon: LayoutDashboard,
+    },
+    {
+      href: '/advisory',
+      labelKey: 'advisory',
+      icon: CloudSun,
     },
     {
       href: '/encyclopedia',

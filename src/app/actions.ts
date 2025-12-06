@@ -40,6 +40,11 @@ import {
   type CalculateProfitInput,
   type CalculateProfitOutput,
 } from '@/ai/flows/calculate-profit';
+import {
+    getFarmingRecommendations as getFarmingRecommendationsFlow,
+    type GetFarmingRecommendationsInput,
+    type GetFarmingRecommendationsOutput,
+} from '@/ai/flows/get-farming-recommendations';
 
 
 export async function analyzeCropImage(
@@ -198,6 +203,25 @@ export async function calculateProfit(
     return {
       success: false,
       error: 'Failed to calculate profit. Please try again.',
+    };
+  }
+}
+
+export async function getFarmingRecommendations(
+  input: GetFarmingRecommendationsInput
+): Promise<{
+  success: boolean;
+  data?: GetFarmingRecommendationsOutput;
+  error?: string;
+}> {
+  try {
+    const result = await getFarmingRecommendationsFlow(input);
+    return { success: true, data: result };
+  } catch (error) {
+    console.error('Error getting farming recommendations:', error);
+    return {
+      success: false,
+      error: 'Failed to get farming recommendations. Please try again.',
     };
   }
 }

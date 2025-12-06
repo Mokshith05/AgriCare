@@ -12,3 +12,4 @@ import '@/ai/flows/search-encyclopedia';
 import '@/ai/flows/recommend-crops';
 import '@/ai/flows/search-preventive-care-tips';
 import '@/ai/flows/calculate-profit';
+import '@/ai/flows/get-farming-recommendations';

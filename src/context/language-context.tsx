@@ -21,6 +21,7 @@ const translations: Record<string, Record<string, any>> = {
         fieldLogbook: 'Field Logbook',
         recommendations: 'Crop Recommendations',
         profitCalculator: 'Profit Calculator',
+        advisory: 'Farming Advisory',
     },
     dashboard: {
       quickGuide: 'Quick Guide',
@@ -132,6 +133,21 @@ const translations: Record<string, Record<string, any>> = {
         errorTitle: 'Calculation Failed',
         errorDescription: 'Could not calculate profit. Please check your inputs and try again.',
     },
+    advisory: {
+        title: 'Farming Advisory',
+        pageTitle: 'AI Farming Advisory',
+        pageDescription: 'Get AI-powered farming advice based on real-time weather and farm data.',
+        selectLocation: 'Select Location',
+        getLocation: 'Get Advisory',
+        loading: 'Generating your advisory...',
+        errorTitle: 'Advisory Failed',
+        errorDescription: 'Could not generate an advisory at this time. Please try again.',
+        currentWeather: 'Current Weather Summary',
+        farmingRecommendations: 'Farming Recommendations',
+        riskAlerts: 'Risk Alerts',
+        nextSeasonCrops: 'Next Season Crop Suggestions',
+        explanation: 'AI-Generated Explanation'
+    },
   },
   hi: {
     keyMapping: {
@@ -141,6 +157,7 @@ const translations: Record<string, Record<string, any>> = {
         fieldLogbook: 'फील्ड लॉगबुक',
         recommendations: 'फ़सल सिफ़ारिशें',
         profitCalculator: 'लाभ कैलकुलेटर',
+        advisory: 'कृषि सलाह',
     },
     dashboard: {
       quickGuide: 'त्वरित गाइड',
@@ -252,6 +269,21 @@ const translations: Record<string, Record<string, any>> = {
         errorTitle: 'गणना विफल',
         errorDescription: 'लाभ की गणना नहीं हो सकी। कृपया अपने इनपुट की जांच करें और पुनः प्रयास करें।',
     },
+    advisory: {
+        title: 'कृषि सलाह',
+        pageTitle: 'एआई कृषि सलाह',
+        pageDescription: 'वास्तविक समय के मौसम और खेत डेटा के आधार पर एआई-संचालित कृषि सलाह प्राप्त करें।',
+        selectLocation: 'स्थान चुनें',
+        getLocation: 'सलाह प्राप्त करें',
+        loading: 'आपकी सलाह तैयार की जा रही है...',
+        errorTitle: 'सलाह विफल',
+        errorDescription: 'इस समय सलाह उत्पन्न नहीं की जा सकी। कृपया पुनः प्रयास करें।',
+        currentWeather: 'वर्तमान मौसम सारांश',
+        farmingRecommendations: 'खेती की सिफारिशें',
+        riskAlerts: 'जोखिम अलर्ट',
+        nextSeasonCrops: 'अगले सीजन की फसल सुझाव',
+        explanation: 'एआई-जनित स्पष्टीकरण'
+    },
   },
   te: {
     keyMapping: {
@@ -261,6 +293,7 @@ const translations: Record<string, Record<string, any>> = {
         fieldLogbook: 'ఫీల్డ్ లాగ్‌బుక్',
         recommendations: 'పంట సిఫార్సులు',
         profitCalculator: 'లాభాల కాలిక్యులేటర్',
+        advisory: 'వ్యవసాయ సలహా',
     },
     dashboard: {
       quickGuide: 'త్వరిత గైడ్',
@@ -372,6 +405,21 @@ const translations: Record<string, Record<string, any>> = {
         errorTitle: 'గణన విఫలమైంది',
         errorDescription: 'లాభాన్ని గణించడంలో విఫలమైంది. దయచేసి మీ ఇన్‌పుట్‌లను తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.',
     },
+    advisory: {
+        title: 'వ్యవసాయ సలహా',
+        pageTitle: 'AI వ్యవసాయ సలహా',
+        pageDescription: 'నిజ-సమయ వాతావరణం మరియు వ్యవసాయ డేటా ఆధారంగా AI-ఆధారిత వ్యవసాయ సలహాలను పొందండి.',
+        selectLocation: 'ప్రదేశాన్ని ఎంచుకోండి',
+        getLocation: 'సలహా పొందండి',
+        loading: 'మీ సలహా రూపొందించబడుతోంది...',
+        errorTitle: 'సలహా విఫలమైంది',
+        errorDescription: 'ప్రస్తుతం సలహా రూపొందించడం సాధ్యం కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.',
+        currentWeather: 'ప్రస్తుత వాతావరణ సారాంశం',
+        farmingRecommendations: 'వ్యవసాయ సిఫార్సులు',
+        riskAlerts: 'ప్రమాద హెచ్చరికలు',
+        nextSeasonCrops: 'తదుపరి సీజన్ పంట సూచనలు',
+        explanation: 'AI- రూపొందించిన వివరణ'
+    },
   },
   ta: {
     keyMapping: {
@@ -381,6 +429,7 @@ const translations: Record<string, Record<string, any>> = {
         fieldLogbook: 'புல பதிவு புத்தகம்',
         recommendations: 'பயிர் பரிந்துரைகள்',
         profitCalculator: 'இலாப கால்குலேட்டர்',
+        advisory: 'விவசாய ஆலோசனை',
     },
     dashboard: {
       quickGuide: 'விரைவு வழிகாட்டி',
@@ -491,6 +540,21 @@ const translations: Record<string, Record<string, any>> = {
         summaryTitle: 'AI சுருக்கம்',
         errorTitle: 'கணக்கீடு தோல்வியுற்றது',
         errorDescription: 'இலாபத்தைக் கணக்கிட முடியவில்லை. உங்கள் உள்ளீடுகளைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.',
+    },
+    advisory: {
+        title: 'விவசாய ஆலோசனை',
+        pageTitle: 'AI விவசாய ஆலோசனை',
+        pageDescription: 'நிகழ்நேர வானிலை மற்றும் பண்ணை தரவு அடிப்படையில் AI-ஆல் இயக்கப்படும் விவசாய ஆலோசனையைப் பெறுங்கள்.',
+        selectLocation: 'இடத்தைத் தேர்ந்தெடுக்கவும்',
+        getLocation: 'ஆலோசனையைப் பெறுங்கள்',
+        loading: 'உங்கள் ஆலோசனை உருவாக்கப்படுகிறது...',
+        errorTitle: 'ஆலோசனை தோல்வியுற்றது',
+        errorDescription: 'இந்த நேரத்தில் ஒரு ஆலோசனையை உருவாக்க முடியவில்லை. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.',
+        currentWeather: 'தற்போதைய வானிலை சுருக்கம்',
+        farmingRecommendations: 'விவசாயப் பரிந்துரைகள்',
+        riskAlerts: 'இடர் எச்சரிக்கைகள்',
+        nextSeasonCrops: 'அடுத்த பருவ பயிர் பரிந்துரைகள்',
+        explanation: 'AI-உருவாக்கிய விளக்கம்'
     },
   },
 };
