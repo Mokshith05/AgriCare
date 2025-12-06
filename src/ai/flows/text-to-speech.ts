@@ -28,10 +28,10 @@ export async function textToSpeech(input: TextToSpeechInput): Promise<TextToSpee
 
 // Map language codes to voice names
 const voiceMap: Record<string, string> = {
-  en: 'Algenib', // English
-  hi: 'Elnath', // Hindi
-  te: 'en-IN-Wavenet-D', // Telugu (using a standard Google voice as Gemini TTS might not have a specific Telugu one)
-  ta: 'en-IN-Wavenet-D',
+  en: 'Algenib',    // English
+  hi: 'gemini-hi-IN', // Hindi
+  te: 'gemini-te-IN', // Telugu
+  ta: 'Alpheratz',   // Tamil
 };
 
 async function toWav(
