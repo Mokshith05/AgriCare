@@ -3,13 +3,13 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Sun, Droplets, Thermometer, TriangleAlert, Loader2, Cloud, Zap, CloudRain } from 'lucide-react';
+import { Sun, Droplets, Thermometer, TriangleAlert, Loader2, Cloud, Zap, CloudRain, MapPin } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 import { getRealtimeWeather } from '@/app/actions';
 import type { GetWeatherDataOutput } from '@/ai/flows/get-weather-data';
+import { Button } from '../ui/button';
+import { useToast } from '@/hooks/use-toast';
 
-const CITIES = ['Bangalore', 'Chennai', 'Kolkata', 'Mumbai', 'New Delhi'].sort();
 
 const WeatherIcon = ({ condition }: { condition: string }) => {
   switch (condition.toLowerCase()) {
@@ -33,51 +33,86 @@ const WeatherIcon = ({ condition }: { condition: string }) => {
 
 export default function WeatherWidget() {
   const { getTranslation } = useLanguage();
-  const [selectedCity, setSelectedCity] = useState(CITIES[0]);
+  const [city, setCity] = useState<string | null>(null);
   const [weather, setWeather] = useState<GetWeatherDataOutput | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const { toast } = useToast();
+
+  const fetchWeather = async (city: string) => {
+    setLoading(true);
+    setError(null);
+    const response = await getRealtimeWeather({ city });
+    if (response.success && response.data) {
+      setWeather(response.data);
+    } else {
+      setError(getTranslation('dashboard.weatherError'));
+      setWeather(null);
+    }
+    setLoading(false);
+  };
+  
+  const getCityFromCoords = async (latitude: number, longitude: number) => {
+    try {
+        // This is a free, public API that doesn't require a key.
+        const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+        const data = await response.json();
+        const city = data.address.city || data.address.town || data.address.village || 'Unknown';
+        setCity(city);
+        fetchWeather(city);
+    } catch (e) {
+        setError("Could not determine your city from location.");
+        setLoading(false);
+    }
+  }
+
+  const handleGetLocation = () => {
+    if (navigator.geolocation) {
+        setLoading(true);
+        setError(null);
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                getCityFromCoords(position.coords.latitude, position.coords.longitude);
+            },
+            (err) => {
+                setError('Could not get your location. Please enable location services.');
+                toast({
+                    variant: "destructive",
+                    title: "Location Error",
+                    description: "Please enable location access in your browser to get live weather data."
+                });
+                setLoading(false);
+            }
+        );
+    } else {
+      setError('Geolocation is not supported by your browser.');
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchWeather = async () => {
-      setLoading(true);
-      const response = await getRealtimeWeather({ city: selectedCity });
-      if (response.success && response.data) {
-        setWeather(response.data);
-      } else {
-        // Handle error, maybe show a toast
-        console.error(response.error);
-        setWeather(null);
-      }
-      setLoading(false);
-    };
-
-    fetchWeather();
-  }, [selectedCity]);
+    handleGetLocation();
+  }, []);
 
   return (
     <Card className="bg-card/70 backdrop-blur-lg">
       <CardHeader>
         <CardTitle>{getTranslation('dashboard.localWeather')}</CardTitle>
-        <CardDescription>
-          <Select onValuechange={setSelectedCity} defaultValue={selectedCity}>
-            <SelectTrigger className="w-full mt-2">
-              <SelectValue placeholder={getTranslation('dashboard.selectCity')} />
-            </SelectTrigger>
-            <SelectContent>
-              {CITIES.map((city) => (
-                <SelectItem key={city} value={city}>
-                  {city}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </CardDescription>
+        {city && !loading && <CardDescription>{city}</CardDescription>}
       </CardHeader>
       <CardContent className="space-y-4">
         {loading ? (
           <div className="flex justify-center items-center h-24">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
           </div>
+        ) : error ? (
+            <div className="text-center text-muted-foreground space-y-3">
+                 <p>{error}</p>
+                 <Button variant="outline" onClick={handleGetLocation}>
+                    <MapPin className='mr-2'/>
+                    Try Again
+                 </Button>
+            </div>
         ) : weather ? (
           <>
             <div className="grid grid-cols-3 gap-4 text-center">
