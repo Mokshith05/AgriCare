@@ -18,32 +18,34 @@ import {
   ShieldCheck,
   ClipboardList,
 } from 'lucide-react';
-
-const menuItems = [
-  {
-    href: '/',
-    label: 'Dashboard',
-    icon: LayoutDashboard,
-  },
-  {
-    href: '/encyclopedia',
-    label: 'Encyclopedia',
-    icon: BookOpen,
-  },
-  {
-    href: '/preventive-care',
-    label: 'Preventive Care',
-    icon: ShieldCheck,
-  },
-  {
-    href: '/logbook',
-    label: 'Field Logbook',
-    icon: ClipboardList,
-  },
-];
+import { useLanguage } from '@/context/language-context';
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const { getTranslation } = useLanguage();
+
+  const menuItems = [
+    {
+      href: '/',
+      labelKey: 'dashboard',
+      icon: LayoutDashboard,
+    },
+    {
+      href: '/encyclopedia',
+      labelKey: 'encyclopedia',
+      icon: BookOpen,
+    },
+    {
+      href: '/preventive-care',
+      labelKey: 'preventiveCare',
+      icon: ShieldCheck,
+    },
+    {
+      href: '/logbook',
+      labelKey: 'fieldLogbook',
+      icon: ClipboardList,
+    },
+  ];
 
   return (
     <Sidebar>
@@ -64,11 +66,11 @@ export function AppSidebar() {
                 href={item.href}
                 isActive={pathname === item.href}
                 tooltip={{
-                  children: item.label,
+                  children: getTranslation(`keyMapping.${item.labelKey}`),
                 }}
               >
                 <item.icon />
-                <span>{item.label}</span>
+                <span>{getTranslation(`keyMapping.${item.labelKey}`)}</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

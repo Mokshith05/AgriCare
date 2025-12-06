@@ -10,32 +10,50 @@ import {
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Globe } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useLanguage, type Language } from '@/context/language-context';
 
 type HeaderProps = {
   title: string;
 };
 
+const languages: { code: Language; name: string }[] = [
+    { code: 'en', name: 'English' },
+    { code: 'hi', name: 'हिन्दी (Hindi)' },
+    { code: 'te', name: 'తెలుగు (Telugu)' },
+    { code: 'ta', name: 'தமிழ் (Tamil)' },
+];
+
 export default function Header({ title }: HeaderProps) {
   const isMobile = useIsMobile();
+  const { language, setLanguage, getTranslation } = useLanguage();
+
+  const translatedTitle = getTranslation(
+    Object.keys(getTranslation('keyMapping')).find(
+      (key) => getTranslation(`keyMapping.${key}`) === title
+    ) || title
+  ) || title;
+
+  const currentLanguageName = languages.find((l) => l.code === language)?.name || 'English';
 
   return (
     <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:px-6">
       {isMobile && <SidebarTrigger />}
-      <h1 className="text-xl font-semibold tracking-tight">{title}</h1>
+      <h1 className="text-xl font-semibold tracking-tight">{translatedTitle}</h1>
       <div className="ml-auto flex items-center gap-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="gap-2">
               <Globe className="h-4 w-4" />
-              <span>English</span>
+              <span>{currentLanguageName}</span>
               <ChevronDown className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem>English</DropdownMenuItem>
-            <DropdownMenuItem>हिन्दी (Hindi)</DropdownMenuItem>
-            <DropdownMenuItem>తెలుగు (Telugu)</DropdownMenuItem>
-            <DropdownMenuItem>தமிழ் (Tamil)</DropdownMenuItem>
+            {languages.map((lang) => (
+                <DropdownMenuItem key={lang.code} onSelect={() => setLanguage(lang.code)}>
+                    {lang.name}
+                </DropdownMenuItem>
+            ))}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
