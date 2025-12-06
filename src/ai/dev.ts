@@ -10,7 +10,6 @@ import '@/ai/flows/text-to-speech';
 import '@/ai/flows/get-weather-data';
 import '@/ai/flows/search-encyclopedia';
 import '@/ai/flows/recommend-crops';
-import '@/ai/flows/search-preventive-care-tips';
 import '@/ai/flows/calculate-profit';
 import '@/ai/flows/get-farming-recommendations';
 import '@/ai/flows/get-government-schemes';

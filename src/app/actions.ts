@@ -31,11 +31,6 @@ import {
   type RecommendCropsOutput,
 } from '@/ai/flows/recommend-crops';
 import {
-  searchPreventiveCareTips,
-  type SearchPreventiveCareTipsInput,
-  type SearchPreventiveCareTipsOutput,
-} from '@/ai/flows/search-preventive-care-tips';
-import {
   calculateProfit as calculateProfitFlow,
   type CalculateProfitInput,
   type CalculateProfitOutput,
@@ -172,26 +167,6 @@ export async function recommendCrops(
     };
   }
 }
-
-export async function getPreventiveCareTips(
-  input: SearchPreventiveCareTipsInput
-): Promise<{
-  success: boolean;
-  data?: SearchPreventiveCareTipsOutput;
-  error?: string;
-}> {
-  try {
-    const result = await searchPreventiveCareTips(input);
-    return { success: true, data: result };
-  } catch (error) {
-    console.error('Error getting preventive care tips:', error);
-    return {
-      success: false,
-      error: 'Failed to get preventive care tips. Please try again.',
-    };
-  }
-}
-
 
 export async function calculateProfit(
   input: CalculateProfitInput

@@ -15,7 +15,6 @@ import { Icons } from '@/components/icons';
 import {
   LayoutDashboard,
   BookOpen,
-  ShieldCheck,
   ClipboardList,
   Wand2,
   Calculator,
@@ -42,11 +41,6 @@ export function AppSidebar() {
       href: '/encyclopedia',
       labelKey: 'encyclopedia',
       icon: BookOpen,
-    },
-    {
-      href: '/preventive-care',
-      labelKey: 'preventiveCare',
-      icon: ShieldCheck,
     },
     {
       href: '/logbook',

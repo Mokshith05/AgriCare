@@ -17,7 +17,6 @@ const translations: Record<string, Record<string, any>> = {
     keyMapping: {
         dashboard: 'Dashboard',
         encyclopedia: 'Encyclopedia',
-        preventiveCare: 'Preventive Care',
         fieldLogbook: 'Field Logbook',
         recommendations: 'Crop Recommendations',
         profitCalculator: 'Profit Calculator',
@@ -61,14 +60,6 @@ const translations: Record<string, Record<string, any>> = {
       notFound: 'No Results Found',
       searchErrorTitle: 'Search Failed',
       searchErrorDescription: 'Could not perform search. Please try again.',
-    },
-    preventiveCare: {
-      title: 'Preventive Care',
-      pageTitle: 'Crop Care Guide',
-      pageDescription: 'Proactive tips to keep your crops healthy and thriving.',
-      searchPlaceholder: 'Search for a crop to get care tips...',
-      searchErrorTitle: 'Search Failed',
-      searchErrorDescription: 'Could not fetch care tips. Please try again.',
     },
     logbook: {
       title: 'Field Logbook',
@@ -168,7 +159,6 @@ const translations: Record<string, Record<string, any>> = {
     keyMapping: {
         dashboard: 'डैशबोर्ड',
         encyclopedia: 'विश्वकोश',
-        preventiveCare: 'निवारक देखभाल',
         fieldLogbook: 'फील्ड लॉगबुक',
         recommendations: 'फ़सल सिफ़ारिशें',
         profitCalculator: 'लाभ कैलकुलेटर',
@@ -212,14 +202,6 @@ const translations: Record<string, Record<string, any>> = {
       notFound: 'कोई परिणाम नहीं मिला',
       searchErrorTitle: 'खोज विफल',
       searchErrorDescription: 'खोज नहीं की जा सकी। कृपया पुनः प्रयास करें।',
-    },
-    preventiveCare: {
-      title: 'निवारक देखभाल',
-      pageTitle: 'फसल देखभाल गाइड',
-      pageDescription: 'आपकी फसलों को स्वस्थ और समृद्ध रखने के लिए सक्रिय सुझाव।',
-      searchPlaceholder: 'देखभाल युक्तियों के लिए फसल खोजें...',
-      searchErrorTitle: 'खोज विफल',
-      searchErrorDescription: 'देखभाल युक्तियाँ प्राप्त नहीं की जा सकीं। कृपया पुनः प्रयास करें।',
     },
     logbook: {
       title: 'फील्ड लॉगबुक',
@@ -319,7 +301,6 @@ const translations: Record<string, Record<string, any>> = {
     keyMapping: {
         dashboard: 'డాష్‌బోర్డ్',
         encyclopedia: 'ఎన్సైక్లోపీడియా',
-        preventiveCare: 'నివారణ సంరక్షణ',
         fieldLogbook: 'ఫీల్డ్ లాగ్‌బుక్',
         recommendations: 'పంట సిఫార్సులు',
         profitCalculator: 'లాభాల కాలిక్యులేటర్',
@@ -363,14 +344,6 @@ const translations: Record<string, Record<string, any>> = {
       notFound: 'ఫలితాలు కనుగొనబడలేదు',
       searchErrorTitle: 'శోధన విఫలమైంది',
       searchErrorDescription: 'శోధన చేయడంలో విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.',
-    },
-    preventiveCare: {
-      title: 'నివారణ సంరక్షణ',
-      pageTitle: 'పంట సంరక్షణ గైడ్',
-      pageDescription: 'మీ పంటలను ఆరోగ్యంగా మరియు అభివృద్ధి చెందడానికి చురుకైన చిట్కాలు.',
-      searchPlaceholder: 'సంరక్షణ చిట్కాలను పొందడానికి ఒక పంట కోసం శోధించండి...',
-      searchErrorTitle: 'శోధన విఫలమైంది',
-      searchErrorDescription: 'సంరక్షణ చిట్కాలను పొందడంలో విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.',
     },
     logbook: {
       title: 'ఫీల్డ్ లాగ్‌బుక్',
@@ -470,7 +443,6 @@ const translations: Record<string, Record<string, any>> = {
     keyMapping: {
         dashboard: 'முதன்மைப் பக்கம்',
         encyclopedia: 'களஞ்சியம்',
-        preventiveCare: 'தடுப்பு பராமரிப்பு',
         fieldLogbook: 'புல பதிவு புத்தகம்',
         recommendations: 'பயிர் பரிந்துரைகள்',
         profitCalculator: 'இலாப கால்குலேட்டர்',
@@ -514,14 +486,6 @@ const translations: Record<string, Record<string, any>> = {
       notFound: 'முடிவுகள் எதுவும் இல்லை',
       searchErrorTitle: 'தேடல் தோல்வியுற்றது',
       searchErrorDescription: 'தேடல் செய்ய முடியவில்லை. ദയവായി വീണ്ടും ശ്രമിക്കുക.',
-    },
-    preventiveCare: {
-      title: 'தடுப்பு பராமரிப்பு',
-      pageTitle: 'பயிர் பராமரிப்பு வழிகாட்டி',
-      pageDescription: 'உங்கள் பயிர்களை ஆரோக்கியமாகவும் செழிப்பாகவும் வைத்திருக்க செயல்திட்ட குறிப்புகள்.',
-      searchPlaceholder: 'பராமரிப்பு குறிப்புகளைப் பெற ஒரு பயிரைத் தேடுங்கள்...',
-      searchErrorTitle: 'தேடல் தோல்வியுற்றது',
-      searchErrorDescription: 'பராமரிப்பு குறிப்புகளைப் பெற முடியவில்லை. ദയവായി വീണ്ടും ശ്രമിക്കുക.',
     },
     logbook: {
       title: 'புல பதிவு புத்தகம்',
