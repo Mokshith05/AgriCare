@@ -108,10 +108,12 @@ export default function LogbookPage() {
                       <CardHeader className="p-4">
                         <div className="flex items-center justify-between">
                             <CardTitle className="text-base">{log.activity}</CardTitle>
-                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                <CalendarIcon className="h-4 w-4" />
-                                <span>{isClient ? new Date(log.date).toLocaleDateString(language) : ''}</span>
-                            </div>
+                             {isClient && (
+                                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                                    <CalendarIcon className="h-4 w-4" />
+                                    <span>{new Date(log.date).toLocaleDateString(language)}</span>
+                                </div>
+                             )}
                         </div>
                       </CardHeader>
                       {log.notes && (
