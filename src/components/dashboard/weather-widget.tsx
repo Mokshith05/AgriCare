@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -33,7 +34,6 @@ const WeatherIcon = ({ condition }: { condition: string }) => {
 
 export default function WeatherWidget() {
   const { getTranslation } = useLanguage();
-  const [city, setCity] = useState<string | null>(null);
   const [weather, setWeather] = useState<GetWeatherDataOutput | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -58,7 +58,6 @@ export default function WeatherWidget() {
         const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
         const data = await response.json();
         const city = data.address.city || data.address.town || data.address.village || 'Unknown';
-        setCity(city);
         fetchWeather(city);
     } catch (e) {
         setError("Could not determine your city from location.");
@@ -98,7 +97,7 @@ export default function WeatherWidget() {
     <Card className="bg-card/70 backdrop-blur-lg">
       <CardHeader>
         <CardTitle>{getTranslation('dashboard.localWeather')}</CardTitle>
-        {city && !loading && <CardDescription>{city}</CardDescription>}
+        <CardDescription>{getTranslation('dashboard.weatherDescription')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         {loading ? (
