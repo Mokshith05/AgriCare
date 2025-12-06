@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "blight-disease",
+      "description": "A tomato plant with leaves affected by blight disease.",
+      "imageUrl": "https://images.unsplash.com/photo-1602574759761-d0d9b471495a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkaXNlYXNlZCUyMHBsYW50fGVufDB8fHx8MTc2NTAxOTc1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diseased plant"
+    },
+    {
+      "id": "powdery-mildew",
+      "description": "A leaf covered in white powdery mildew.",
+      "imageUrl": "https://images.unsplash.com/photo-1603969352799-5054acc6e79f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkaXNlYXNlZCUyMGxlYWZ8ZW58MHx8fHwxNzY0OTk0MjcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diseased leaf"
+    },
+    {
+      "id": "aphids-infestation",
+      "description": "A plant stem infested with small green aphids.",
+      "imageUrl": "https://images.unsplash.com/photo-1630761283047-172eb84fc3ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwbGFudCUyMHBlc3R8ZW58MHx8fHwxNzY1MDA0NDkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "plant pest"
+    },
+    {
+      "id": "rust-fungus",
+      "description": "Leaves showing orange spots characteristic of rust fungus.",
+      "imageUrl": "https://images.unsplash.com/photo-1598982576253-e9ccbb1892f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmdW5ndXMlMjBsZWFmfGVufDB8fHx8MTc2NTAxOTc1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fungus leaf"
+    },
+    {
+      "id": "caterpillar-damage",
+      "description": "A leaf with holes eaten by caterpillars.",
+      "imageUrl": "https://images.unsplash.com/photo-1721666801774-e5bc85052d4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlYXRlbiUyMGxlYWZ8ZW58MHx8fHwxNzY1MDE5NzU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "eaten leaf"
+    },
+    {
+      "id": "bacterial-spot",
+      "description": "A pepper showing dark, raised spots from a bacterial infection.",
+      "imageUrl": "https://images.unsplash.com/photo-1622376242797-538aa64a9d38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzcG90dGVkJTIwdmVnZXRhYmxlfGVufDB8fHx8MTc2NTAxOTc1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "spotted vegetable"
+    }
+  ]
 }
