@@ -4,6 +4,8 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { VariantProps, cva } from "class-variance-authority"
 import { PanelLeft } from "lucide-react"
+import Link from "next/link";
+
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -533,31 +535,57 @@ const sidebarMenuButtonVariants = cva(
   }
 )
 
-const SidebarMenuButton = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button"> & {
-    asChild?: boolean
-    isActive?: boolean
-    tooltip?: string | React.ComponentProps<typeof TooltipContent>
-  } & VariantProps<typeof sidebarMenuButtonVariants>
->(
-  (
+type PolymorphicRef<C extends React.ElementType> =
+  React.ComponentPropsWithRef<C>["ref"]
+
+type AsProp<C extends React.ElementType> = {
+  as?: C
+}
+
+type PropsToOmit<C extends React.ElementType, P> = keyof (AsProp<C> & P)
+
+type PolymorphicComponentProp<
+  C extends React.ElementType,
+  Props = {}
+> = React.PropsWithChildren<Props & AsProp<C>> &
+  Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>
+
+type PolymorphicComponentPropWithRef<
+  C extends React.ElementType,
+  Props = {}
+> = PolymorphicComponentProp<C, Props> & { ref?: PolymorphicRef<C> }
+
+type SidebarMenuButtonProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<
+    C,
     {
-      asChild = false,
+      isActive?: boolean
+      tooltip?: string | React.ComponentProps<typeof TooltipContent>
+    } & VariantProps<typeof sidebarMenuButtonVariants>
+  >
+
+type SidebarMenuButtonComponent = <C extends React.ElementType = "button">(
+  props: SidebarMenuButtonProps<C>
+) => React.ReactElement | null
+
+const SidebarMenuButton = React.forwardRef(
+  <C extends React.ElementType = "button">(
+    {
+      as,
       isActive = false,
       variant = "default",
       size = "default",
       tooltip,
       className,
       ...props
-    },
-    ref
+    }: SidebarMenuButtonProps<C>,
+    ref: PolymorphicRef<C>
   ) => {
-    const Comp = asChild ? Slot : "button"
     const { isMobile, state } = useSidebar()
+    const Component = as || "button"
 
     const button = (
-      <Comp
+      <Component
         ref={ref}
         data-sidebar="menu-button"
         data-size={size}
@@ -589,7 +617,7 @@ const SidebarMenuButton = React.forwardRef<
       </Tooltip>
     )
   }
-)
+) as SidebarMenuButtonComponent
 SidebarMenuButton.displayName = "SidebarMenuButton"
 
 const SidebarMenuAction = React.forwardRef<
