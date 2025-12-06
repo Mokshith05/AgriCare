@@ -94,7 +94,7 @@ function SearchResult({ result }: { result: SearchEncyclopediaOutput }) {
 
 
 export default function EncyclopediaPage() {
-  const { getTranslation } = useLanguage();
+  const { getTranslation, language } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [searchResult, setSearchResult] = useState<SearchEncyclopediaOutput | null>(null);
@@ -107,7 +107,7 @@ export default function EncyclopediaPage() {
     setIsLoading(true);
     setSearchResult(null);
 
-    const response = await performEncyclopediaSearch({ query: searchQuery });
+    const response = await performEncyclopediaSearch({ query: searchQuery, language });
 
     if (response.success && response.data) {
       setSearchResult(response.data);

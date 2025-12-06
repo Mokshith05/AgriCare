@@ -13,6 +13,7 @@ import { z } from 'genkit';
 
 const SearchEncyclopediaInputSchema = z.object({
   query: z.string().describe('The search query for an agricultural topic (e.g., a pest, disease, or concept).'),
+  language: z.string().describe('The language for the response (e.g., "English", "Hindi", "Telugu").'),
 });
 export type SearchEncyclopediaInput = z.infer<typeof SearchEncyclopediaInputSchema>;
 
@@ -37,14 +38,16 @@ const prompt = ai.definePrompt({
   output: { schema: SearchEncyclopediaOutputSchema },
   prompt: `You are an agricultural expert. A user is searching an encyclopedia for information.
   The user's query is: "{{{query}}}"
+  The user's language is: "{{{language}}}"
 
-  Based on the query, provide a detailed encyclopedia entry.
+  Based on the query, provide a detailed encyclopedia entry in the user's specified language.
   - If the query is about a disease or pest, identify it and fill out the symptoms, prevention, and organic treatment sections.
   - If the query is a general agricultural topic, provide a detailed description and set the category to "General Information".
   - If you cannot find relevant information for the query, set isFound to false and provide a helpful message in the description.
   - Focus on organic and sustainable farming practices, referencing Indian government resources like ICAR and Kisan Suvidha where appropriate.
   - Ensure all lists (symptoms, prevention, treatment) are populated if the topic is a disease or pest.
   - If no specific items for symptoms, prevention or treatment are relevant, you may return empty arrays for those.
+  - The entire response, including titles, descriptions, and list items, must be in the requested language.
   `,
 });
 
