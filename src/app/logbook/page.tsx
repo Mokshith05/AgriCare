@@ -16,7 +16,7 @@ export default function LogbookPage() {
   const [activity, setActivity] = useState('');
   const [notes, setNotes] = useState('');
   const [isClient, setIsClient] = useState(false);
-  const { getTranslation } = useLanguage();
+  const { getTranslation, language } = useLanguage();
 
   useEffect(() => {
     setIsClient(true);
@@ -43,7 +43,9 @@ export default function LogbookPage() {
     setLogs((prevLogs) => {
       const updatedLogs = [{ ...newLog, id: Date.now().toString() }, ...prevLogs];
       try {
-        localStorage.setItem('agriprotect-logs', JSON.stringify(updatedLogs));
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('agriprotect-logs', JSON.stringify(updatedLogs));
+        }
       } catch (error) {
         console.error('Failed to save logs to localStorage', error);
       }
@@ -108,7 +110,7 @@ export default function LogbookPage() {
                             <CardTitle className="text-base">{log.activity}</CardTitle>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                 <CalendarIcon className="h-4 w-4" />
-                                <span>{new Date(log.date).toLocaleDateString()}</span>
+                                <span>{isClient ? new Date(log.date).toLocaleDateString(language) : ''}</span>
                             </div>
                         </div>
                       </CardHeader>
