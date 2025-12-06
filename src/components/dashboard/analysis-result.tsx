@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import { Bot, RefreshCw, Stethoscope } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 interface AnalysisResultProps {
   result: AnalyzePhotoAndSuggestTreatmentsOutput;
@@ -15,17 +16,18 @@ interface AnalysisResultProps {
 }
 
 export default function AnalysisResult({ result, imagePreview, onReset }: AnalysisResultProps) {
+  const { getTranslation } = useLanguage();
   return (
     <Card className="w-full">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2 text-xl">
             <Stethoscope className="h-6 w-6 text-primary" />
-            Analysis Report
+            {getTranslation('dashboard.analysisReport')}
           </CardTitle>
           <Button variant="outline" onClick={onReset}>
             <RefreshCw className="mr-2 h-4 w-4" />
-            New Analysis
+            {getTranslation('dashboard.newAnalysis')}
           </Button>
         </div>
       </CardHeader>
@@ -46,14 +48,14 @@ export default function AnalysisResult({ result, imagePreview, onReset }: Analys
               <div>
                 <h3 className="mb-2 flex items-center text-lg font-semibold text-primary">
                   <Bot className="mr-2 h-5 w-5" />
-                  AI Analysis
+                  {getTranslation('dashboard.aiAnalysis')}
                 </h3>
                 <p className="whitespace-pre-wrap text-sm text-foreground/90">{result.analysis}</p>
               </div>
               <Separator />
               <div>
                 <h3 className="mb-2 text-lg font-semibold text-primary">
-                  Treatment Suggestions
+                  {getTranslation('dashboard.treatmentSuggestions')}
                 </h3>
                 <p className="whitespace-pre-wrap text-sm text-foreground/90">{result.treatmentSuggestions}</p>
               </div>

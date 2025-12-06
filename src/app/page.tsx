@@ -1,11 +1,17 @@
+
+'use client';
+
 import { SidebarInset } from '@/components/ui/sidebar';
 import Header from '@/components/layout/header';
 import ImageUploader from '@/components/dashboard/image-uploader';
 import WeatherWidget from '@/components/dashboard/weather-widget';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ClipboardList } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 export default function DashboardPage() {
+  const { getTranslation } = useLanguage();
+
   return (
     <SidebarInset>
       <div className="flex h-full flex-col bg-background">
@@ -20,19 +26,19 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-base font-medium">
-                    Quick Guide
+                    {getTranslation('dashboard.quickGuide')}
                   </CardTitle>
                   <ClipboardList className="h-5 w-5 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    1. Upload a clear photo of the affected crop.
+                    {getTranslation('dashboard.guideStep1')}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    2. Let our AI analyze for diseases or pests.
+                    {getTranslation('dashboard.guideStep2')}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    3. Receive instant organic treatment advice.
+                    {getTranslation('dashboard.guideStep3')}
                   </p>
                 </CardContent>
               </Card>

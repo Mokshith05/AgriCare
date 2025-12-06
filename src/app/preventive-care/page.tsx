@@ -1,20 +1,24 @@
+'use client';
+
 import Header from '@/components/layout/header';
 import { SidebarInset } from '@/components/ui/sidebar';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { PREVENTIVE_CARE_TIPS } from '@/lib/data';
 import { Sprout } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 export default function PreventiveCarePage() {
+  const { getTranslation } = useLanguage();
   return (
     <SidebarInset>
       <div className="flex h-full flex-col">
-        <Header title="Preventive Care" />
+        <Header title={getTranslation('preventiveCare.title')} />
         <main className="flex-1 p-4 md:p-6 lg:p-8">
           <div className="mx-auto max-w-4xl">
             <div className="mb-8 text-center">
-              <h1 className="text-4xl font-bold tracking-tight">Crop Care Guide</h1>
+              <h1 className="text-4xl font-bold tracking-tight">{getTranslation('preventiveCare.pageTitle')}</h1>
               <p className="mt-2 text-lg text-muted-foreground">
-                Proactive tips to keep your crops healthy and thriving.
+                {getTranslation('preventiveCare.pageDescription')}
               </p>
             </div>
             <Accordion type="single" collapsible className="w-full">

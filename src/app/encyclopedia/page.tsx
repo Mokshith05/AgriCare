@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/layout/header';
@@ -6,12 +8,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { ENCYCLOPEDIA_ARTICLES } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useLanguage } from '@/context/language-context';
 
 export default function EncyclopediaPage() {
+  const { getTranslation } = useLanguage();
+
   return (
     <SidebarInset>
       <div className="flex h-full flex-col">
-        <Header title="Encyclopedia" />
+        <Header title={getTranslation('encyclopedia.title')} />
         <main className="flex-1 p-4 md:p-6 lg:p-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {ENCYCLOPEDIA_ARTICLES.map((article) => {

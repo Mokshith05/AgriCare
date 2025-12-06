@@ -10,6 +10,7 @@ import AnalysisResult from './analysis-result';
 import type { AnalyzePhotoAndSuggestTreatmentsOutput } from '@/ai/flows/analyze-photo-and-suggest-treatments';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/context/language-context';
 
 export default function ImageUploader() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -18,6 +19,7 @@ export default function ImageUploader() {
   const [result, setResult] = useState<AnalyzePhotoAndSuggestTreatmentsOutput | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const { toast } = useToast();
+  const { getTranslation } = useLanguage();
 
   const handleFileChange = (selectedFile: File | null) => {
     if (selectedFile) {
@@ -65,7 +67,7 @@ export default function ImageUploader() {
       } else {
         toast({
           variant: 'destructive',
-          title: 'Analysis Failed',
+          title: getTranslation('dashboard.analysisFailed'),
           description: response.error || 'An unknown error occurred.',
         });
       }
@@ -73,7 +75,7 @@ export default function ImageUploader() {
       toast({
         variant: 'destructive',
         title: 'Error',
-        description: 'Could not analyze image. Please try again.',
+        description: getTranslation('dashboard.analysisError'),
       });
     } finally {
       setLoading(false);
@@ -126,11 +128,11 @@ export default function ImageUploader() {
             <>
               <UploadCloud className="h-12 w-12 text-muted-foreground" />
               <div className="flex flex-col items-center">
-                <p className="font-semibold">Drag & drop an image here</p>
-                <p className="text-sm text-muted-foreground">or</p>
+                <p className="font-semibold">{getTranslation('dashboard.dragAndDrop')}</p>
+                <p className="text-sm text-muted-foreground">{getTranslation('dashboard.or')}</p>
                 <Button asChild variant="link" className="text-base text-accent">
                   <label htmlFor="file-upload">
-                    Browse files
+                    {getTranslation('dashboard.browseFiles')}
                     <input
                       id="file-upload"
                       type="file"
@@ -149,12 +151,12 @@ export default function ImageUploader() {
             {loading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Analyzing...
+                {getTranslation('dashboard.analyzing')}
               </>
             ) : (
               <>
                 <Camera className="mr-2 h-4 w-4" />
-                Analyze Crop
+                {getTranslation('dashboard.analyzeCrop')}
               </>
             )}
           </Button>

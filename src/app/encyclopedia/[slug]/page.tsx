@@ -1,3 +1,5 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { ENCYCLOPEDIA_ARTICLES } from '@/lib/data';
@@ -7,15 +9,11 @@ import Header from '@/components/layout/header';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
-
-export async function generateStaticParams() {
-  return ENCYCLOPEDIA_ARTICLES.map((article) => ({
-    slug: article.slug,
-  }));
-}
+import { useLanguage } from '@/context/language-context';
 
 export default function EncyclopediaArticlePage({ params }: { params: { slug: string } }) {
   const article = ENCYCLOPEDIA_ARTICLES.find((a) => a.slug === params.slug);
+  const { getTranslation } = useLanguage();
 
   if (!article) {
     notFound();
@@ -26,7 +24,7 @@ export default function EncyclopediaArticlePage({ params }: { params: { slug: st
   return (
     <SidebarInset>
       <div className="flex h-full flex-col">
-        <Header title="Encyclopedia" />
+        <Header title={getTranslation('encyclopedia.title')} />
         <main className="flex-1 p-4 md:p-6 lg:p-8">
           <article>
             <div className="mb-8">
@@ -43,7 +41,7 @@ export default function EncyclopediaArticlePage({ params }: { params: { slug: st
                   <CardContent className="p-6">
                     <div className="space-y-6">
                       <section>
-                        <h2 className="mb-3 text-2xl font-semibold">Symptoms</h2>
+                        <h2 className="mb-3 text-2xl font-semibold">{getTranslation('encyclopedia.symptoms')}</h2>
                         <ul className="space-y-2">
                           {article.symptoms.map((symptom, i) => (
                             <li key={i} className="flex items-start gap-2">
@@ -54,7 +52,7 @@ export default function EncyclopediaArticlePage({ params }: { params: { slug: st
                         </ul>
                       </section>
                       <section>
-                        <h2 className="mb-3 text-2xl font-semibold">Prevention</h2>
+                        <h2 className="mb-3 text-2xl font-semibold">{getTranslation('encyclopedia.prevention')}</h2>
                          <ul className="space-y-2">
                           {article.prevention.map((item, i) => (
                             <li key={i} className="flex items-start gap-2">
@@ -65,7 +63,7 @@ export default function EncyclopediaArticlePage({ params }: { params: { slug: st
                         </ul>
                       </section>
                       <section>
-                        <h2 className="mb-3 text-2xl font-semibold">Organic Treatment</h2>
+                        <h2 className="mb-3 text-2xl font-semibold">{getTranslation('encyclopedia.organicTreatment')}</h2>
                          <ul className="space-y-2">
                           {article.treatment.map((item, i) => (
                             <li key={i} className="flex items-start gap-2">
