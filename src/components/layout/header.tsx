@@ -36,13 +36,13 @@ export default function Header({ title }: HeaderProps) {
   const currentLanguageName = languages.find((l) => l.code === language)?.name || 'English';
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:px-6">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-border/50 bg-transparent px-4 md:px-6">
       {isMobile && <SidebarTrigger />}
       <h1 className="text-xl font-semibold tracking-tight">{translatedTitle}</h1>
       <div className="ml-auto flex items-center gap-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="gap-2">
+            <Button variant="outline" className="gap-2 bg-card/70 backdrop-blur-lg">
               <Globe className="h-4 w-4" />
               <span>{currentLanguageName}</span>
               <ChevronDown className="h-4 w-4" />

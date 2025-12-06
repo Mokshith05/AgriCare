@@ -18,7 +18,7 @@ interface AnalysisResultProps {
 export default function AnalysisResult({ result, imagePreview, onReset }: AnalysisResultProps) {
   const { getTranslation } = useLanguage();
   return (
-    <Card className="w-full">
+    <Card className="w-full bg-card/70 backdrop-blur-lg">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2 text-xl">
@@ -43,7 +43,7 @@ export default function AnalysisResult({ result, imagePreview, onReset }: Analys
                data-ai-hint="analyzed crop"
             />
           </div>
-          <ScrollArea className="h-[400px] w-full rounded-md border p-4">
+          <ScrollArea className="h-[400px] w-full rounded-md border bg-background/50 p-4">
             <div className="space-y-6">
               <div>
                 <h3 className="mb-2 flex items-center text-lg font-semibold text-primary">

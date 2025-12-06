@@ -96,7 +96,7 @@ export default function ImageUploader() {
   }
 
   return (
-    <Card>
+    <Card className="bg-card/70 backdrop-blur-lg">
       <CardContent className="p-6">
         <div
           className={cn(
