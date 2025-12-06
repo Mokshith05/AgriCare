@@ -18,6 +18,7 @@ import {
   ShieldCheck,
   ClipboardList,
   Wand2,
+  Calculator,
 } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 
@@ -50,6 +51,11 @@ export function AppSidebar() {
       href: '/recommendations',
       labelKey: 'recommendations',
       icon: Wand2,
+    },
+    {
+      href: '/profit-calculator',
+      labelKey: 'profitCalculator',
+      icon: Calculator,
     }
   ];
 

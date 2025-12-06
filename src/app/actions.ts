@@ -35,6 +35,12 @@ import {
   type SearchPreventiveCareTipsInput,
   type SearchPreventiveCareTipsOutput,
 } from '@/ai/flows/search-preventive-care-tips';
+import {
+  calculateProfit as calculateProfitFlow,
+  type CalculateProfitInput,
+  type CalculateProfitOutput,
+} from '@/ai/flows/calculate-profit';
+
 
 export async function analyzeCropImage(
   input: AnalyzePhotoAndSuggestTreatmentsInput
@@ -172,6 +178,26 @@ export async function getPreventiveCareTips(
     return {
       success: false,
       error: 'Failed to get preventive care tips. Please try again.',
+    };
+  }
+}
+
+
+export async function calculateProfit(
+  input: CalculateProfitInput
+): Promise<{
+  success: boolean;
+  data?: CalculateProfitOutput;
+  error?: string;
+}> {
+  try {
+    const result = await calculateProfitFlow(input);
+    return { success: true, data: result };
+  } catch (error) {
+    console.error('Error calculating profit:', error);
+    return {
+      success: false,
+      error: 'Failed to calculate profit. Please try again.',
     };
   }
 }
