@@ -17,6 +17,7 @@ const AnalyzePhotoAndSuggestTreatmentsInputSchema = z.object({
     .describe(
       "A photo of the affected crop, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:<mimetype>;base64,<encoded_data>'."
     ),
+  language: z.string().describe('The language for the response (e.g., "en", "hi").'),
 });
 export type AnalyzePhotoAndSuggestTreatmentsInput = z.infer<typeof AnalyzePhotoAndSuggestTreatmentsInputSchema>;
 
@@ -39,6 +40,8 @@ const prompt = ai.definePrompt({
   prompt: `You are an AI assistant specializing in agricultural advice for farmers.
   A farmer will upload a photo of their crop, and you will analyze the photo to identify potential diseases, pests, or other issues.
   Based on your analysis, you will suggest specific treatment options, drawing from your knowledge of organic and sustainable farming practices, as well as information from Indian government resources like ICAR and Kisan Suvidha.
+
+  The entire response must be in the following language: {{{language}}}
 
   Analyze the following photo:
   {{media url=photoDataUri}}

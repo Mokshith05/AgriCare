@@ -19,7 +19,7 @@ export default function ImageUploader() {
   const [result, setResult] = useState<AnalyzePhotoAndSuggestTreatmentsOutput | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const { toast } = useToast();
-  const { getTranslation } = useLanguage();
+  const { getTranslation, language } = useLanguage();
 
   const handleFileChange = (selectedFile: File | null) => {
     if (selectedFile) {
@@ -61,7 +61,10 @@ export default function ImageUploader() {
     setLoading(true);
     setResult(null);
     try {
-      const response = await analyzeCropImage(imagePreview);
+      const response = await analyzeCropImage({
+        photoDataUri: imagePreview,
+        language: language,
+      });
       if (response.success && response.data) {
         setResult(response.data);
       } else {

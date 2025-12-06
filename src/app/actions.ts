@@ -2,6 +2,7 @@
 
 import {
   analyzePhotoAndSuggestTreatments,
+  type AnalyzePhotoAndSuggestTreatmentsInput,
   type AnalyzePhotoAndSuggestTreatmentsOutput,
 } from '@/ai/flows/analyze-photo-and-suggest-treatments';
 import {
@@ -26,19 +27,17 @@ import {
 } from '@/ai/flows/search-encyclopedia';
 
 export async function analyzeCropImage(
-  photoDataUri: string
+  input: AnalyzePhotoAndSuggestTreatmentsInput
 ): Promise<{
   success: boolean;
   data?: AnalyzePhotoAndSuggestTreatmentsOutput;
   error?: string;
 }> {
   try {
-    if (!photoDataUri) {
+    if (!input.photoDataUri) {
       throw new Error('No image data provided.');
     }
-    const analysisResult = await analyzePhotoAndSuggestTreatments({
-      photoDataUri,
-    });
+    const analysisResult = await analyzePhotoAndSuggestTreatments(input);
     return {
       success: true,
       data: analysisResult,
