@@ -6,3 +6,4 @@ import '@/ai/flows/generate-treatment-recommendations.ts';
 import '@/ai/flows/analyze-photo-and-suggest-treatments.ts';
 import '@/ai/flows/chat-with-ai';
 import '@/ai/flows/text-to-speech';
+import '@/ai/flows/get-weather-data';

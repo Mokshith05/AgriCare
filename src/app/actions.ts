@@ -14,6 +14,11 @@ import {
   type TextToSpeechInput,
   type TextToSpeechOutput,
 } from '@/ai/flows/text-to-speech';
+import {
+  getWeatherData,
+  type GetWeatherDataInput,
+  type GetWeatherDataOutput,
+} from '@/ai/flows/get-weather-data';
 
 export async function analyzeCropImage(
   photoDataUri: string
@@ -77,6 +82,25 @@ export async function getAudioResponse(
     return {
       success: false,
       error: 'Failed to generate audio. Please try again.',
+    };
+  }
+}
+
+export async function getRealtimeWeather(
+  input: GetWeatherDataInput
+): Promise<{
+  success: boolean;
+  data?: GetWeatherDataOutput;
+  error?: string;
+}> {
+  try {
+    const result = await getWeatherData(input);
+    return { success: true, data: result };
+  } catch (error) {
+    console.error('Error getting weather data:', error);
+    return {
+      success: false,
+      error: 'Failed to get weather data. Please try again.',
     };
   }
 }
