@@ -1,3 +1,4 @@
+'use server';
 import { config } from 'dotenv';
 config();
 
@@ -7,3 +8,4 @@ import '@/ai/flows/analyze-photo-and-suggest-treatments.ts';
 import '@/ai/flows/chat-with-ai';
 import '@/ai/flows/text-to-speech';
 import '@/ai/flows/get-weather-data';
+import '@/ai/flows/search-encyclopedia';

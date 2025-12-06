@@ -19,6 +19,11 @@ import {
   type GetWeatherDataInput,
   type GetWeatherDataOutput,
 } from '@/ai/flows/get-weather-data';
+import {
+  searchEncyclopedia,
+  type SearchEncyclopediaInput,
+  type SearchEncyclopediaOutput,
+} from '@/ai/flows/search-encyclopedia';
 
 export async function analyzeCropImage(
   photoDataUri: string
@@ -101,6 +106,25 @@ export async function getRealtimeWeather(
     return {
       success: false,
       error: 'Failed to get weather data. Please try again.',
+    };
+  }
+}
+
+export async function performEncyclopediaSearch(
+  input: SearchEncyclopediaInput
+): Promise<{
+  success: boolean;
+  data?: SearchEncyclopediaOutput;
+  error?: string;
+}> {
+  try {
+    const result = await searchEncyclopedia(input);
+    return { success: true, data: result };
+  } catch (error) {
+    console.error('Error searching encyclopedia:', error);
+    return {
+      success: false,
+      error: 'An unexpected error occurred during the search. Please try again.',
     };
   }
 }

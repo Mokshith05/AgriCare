@@ -51,7 +51,13 @@ const translations: Record<string, Record<string, any>> = {
       title: 'Encyclopedia',
       symptoms: 'Symptoms',
       prevention: 'Prevention',
-      organicTreatment: 'Organic Treatment'
+      organicTreatment: 'Organic Treatment',
+      searchPlaceholder: 'Search for any disease, pest, or topic...',
+      searchButton: 'Search',
+      clearSearch: 'Clear',
+      notFound: 'No Results Found',
+      searchErrorTitle: 'Search Failed',
+      searchErrorDescription: 'Could not perform search. Please try again.',
     },
     preventiveCare: {
       title: 'Preventive Care',
@@ -113,7 +119,13 @@ const translations: Record<string, Record<string, any>> = {
       title: 'विश्वकोश',
       symptoms: 'लक्षण',
       prevention: 'निवारण',
-      organicTreatment: 'जैविक उपचार'
+      organicTreatment: 'जैविक उपचार',
+      searchPlaceholder: 'किसी भी बीमारी, कीट या विषय के लिए खोजें...',
+      searchButton: 'खोज',
+      clearSearch: 'साफ़ करें',
+      notFound: 'कोई परिणाम नहीं मिला',
+      searchErrorTitle: 'खोज विफल',
+      searchErrorDescription: 'खोज नहीं की जा सकी। कृपया पुनः प्रयास करें।',
     },
     preventiveCare: {
       title: 'निवारक देखभाल',
@@ -175,7 +187,13 @@ const translations: Record<string, Record<string, any>> = {
       title: 'ఎన్సైక్లోపీడియా',
       symptoms: 'లక్షణాలు',
       prevention: 'నివారణ',
-      organicTreatment: 'సేంద్రీయ చికిత్స'
+      organicTreatment: 'సేంద్రీయ చికిత్స',
+      searchPlaceholder: 'ఏదైనా వ్యాధి, తెగులు లేదా అంశం కోసం శోధించండి...',
+      searchButton: 'శోధన',
+      clearSearch: 'క్లియర్ చేయండి',
+      notFound: 'ఫలితాలు కనుగొనబడలేదు',
+      searchErrorTitle: 'శోధన విఫలమైంది',
+      searchErrorDescription: 'శోధన చేయడంలో విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.',
     },
     preventiveCare: {
       title: 'నివారణ సంరక్షణ',
@@ -237,7 +255,13 @@ const translations: Record<string, Record<string, any>> = {
       title: 'களஞ்சியம்',
       symptoms: 'அறிகுறிகள்',
       prevention: 'தடுப்பு',
-      organicTreatment: 'கரிம சிகிச்சை'
+      organicTreatment: 'கரிம சிகிச்சை',
+      searchPlaceholder: 'எந்தவொரு நோய், பூச்சி அல்லது தலைப்புக்கு தேடவும்...',
+      searchButton: 'தேடல்',
+      clearSearch: 'அழி',
+      notFound: 'முடிவுகள் எதுவும் இல்லை',
+      searchErrorTitle: 'தேடல் தோல்வியுற்றது',
+      searchErrorDescription: 'தேடல் செய்ய முடியவில்லை. ദയവായി വീണ്ടും ശ്രമിക്കുക.',
     },
     preventiveCare: {
       title: 'தடுப்பு பராமரிப்பு',
