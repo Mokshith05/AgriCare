@@ -148,6 +148,21 @@ const translations: Record<string, Record<string, any>> = {
         nextSeasonCrops: 'Next Season Crop Suggestions',
         explanation: 'AI-Generated Explanation'
     },
+    govSchemes: {
+        title: 'Government Schemes',
+        description: 'Find relevant government schemes for your crop and location.',
+        cropPlaceholder: 'Enter your crop (e.g., Rice)',
+        locationPlaceholder: 'Enter your location (e.g., Punjab)',
+        searchButton: 'Find Schemes',
+        benefits: 'Benefits',
+        eligibility: 'Eligibility',
+        applyLink: 'Learn More & Apply',
+        noSchemesFound: 'No relevant schemes found for the given criteria.',
+        validationTitle: 'Input Required',
+        validationDescription: 'Please enter both crop and location to find schemes.',
+        errorTitle: 'Search Failed',
+        errorDescription: 'Could not fetch government schemes at this time. Please try again later.',
+    },
   },
   hi: {
     keyMapping: {
@@ -283,6 +298,21 @@ const translations: Record<string, Record<string, any>> = {
         riskAlerts: 'जोखिम अलर्ट',
         nextSeasonCrops: 'अगले सीजन की फसल सुझाव',
         explanation: 'एआई-जनित स्पष्टीकरण'
+    },
+    govSchemes: {
+        title: 'सरकारी योजनाएं',
+        description: 'अपनी फसल और स्थान के लिए प्रासंगिक सरकारी योजनाएं खोजें।',
+        cropPlaceholder: 'अपनी फसल दर्ज करें (जैसे, चावल)',
+        locationPlaceholder: 'अपना स्थान दर्ज करें (जैसे, पंजाब)',
+        searchButton: 'योजनाएं खोजें',
+        benefits: 'लाभ',
+        eligibility: 'पात्रता',
+        applyLink: 'और जानें और आवेदन करें',
+        noSchemesFound: 'दिए गए मानदंडों के लिए कोई प्रासंगिक योजना नहीं मिली।',
+        validationTitle: 'इनपुट आवश्यक है',
+        validationDescription: 'योजनाएं खोजने के लिए कृपया फसल और स्थान दोनों दर्ज करें।',
+        errorTitle: 'खोज विफल',
+        errorDescription: 'इस समय सरकारी योजनाओं को प्राप्त नहीं किया जा सका। कृपया बाद में पुनः प्रयास करें।',
     },
   },
   te: {
@@ -420,6 +450,21 @@ const translations: Record<string, Record<string, any>> = {
         nextSeasonCrops: 'తదుపరి సీజన్ పంట సూచనలు',
         explanation: 'AI- రూపొందించిన వివరణ'
     },
+    govSchemes: {
+        title: 'ప్రభుత్వ పథకాలు',
+        description: 'మీ పంట మరియు ప్రదేశానికి సంబంధించిన ప్రభుత్వ పథకాలను కనుగొనండి.',
+        cropPlaceholder: 'మీ పంటను నమోదు చేయండి (ఉదా., వరి)',
+        locationPlaceholder: 'మీ ప్రదేశాన్ని నమోదు చేయండి (ఉదా., పంజాబ్)',
+        searchButton: 'పథకాలను కనుగొనండి',
+        benefits: 'ప్రయోజనాలు',
+        eligibility: 'అర్హత',
+        applyLink: 'మరింత తెలుసుకోండి & దరఖాస్తు చేయండి',
+        noSchemesFound: 'ఇచ్చిన ప్రమాణాలకు సంబంధించిన పథకాలు కనుగొనబడలేదు.',
+        validationTitle: 'ఇన్‌పుట్ అవసరం',
+        validationDescription: 'పథకాలను కనుగొనడానికి దయచేసి పంట మరియు ప్రదేశం రెండింటినీ నమోదు చేయండి.',
+        errorTitle: 'శోధన విఫలమైంది',
+        errorDescription: 'ప్రస్తుతం ప్రభుత్వ పథకాలను పొందడం సాధ్యం కాలేదు. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి.',
+    },
   },
   ta: {
     keyMapping: {
@@ -555,6 +600,21 @@ const translations: Record<string, Record<string, any>> = {
         riskAlerts: 'இடர் எச்சரிக்கைகள்',
         nextSeasonCrops: 'அடுத்த பருவ பயிர் பரிந்துரைகள்',
         explanation: 'AI-உருவாக்கிய விளக்கம்'
+    },
+     govSchemes: {
+        title: 'அரசு திட்டங்கள்',
+        description: 'உங்கள் பயிர் மற்றும் இருப்பிடத்திற்கான பொருத்தமான அரசு திட்டங்களைக் கண்டறியவும்.',
+        cropPlaceholder: 'உங்கள் பயிரை உள்ளிடவும் (எ.கா., அரிசி)',
+        locationPlaceholder: 'உங்கள் இருப்பிடத்தை உள்ளிடவும் (எ.கா., பஞ்சாப்)',
+        searchButton: 'திட்டங்களைக் கண்டறியவும்',
+        benefits: 'நன்மைகள்',
+        eligibility: 'தகுதி',
+        applyLink: 'மேலும் அறிய & விண்ணப்பிக்கவும்',
+        noSchemesFound: 'கொடுக்கப்பட்ட நிபந்தனைகளுக்கு பொருத்தமான திட்டங்கள் எதுவும் இல்லை.',
+        validationTitle: 'உள்ளீடு தேவை',
+        validationDescription: 'திட்டங்களைக் கண்டறிய பயிர் மற்றும் இருப்பிடம் இரண்டையும் உள்ளிடவும்.',
+        errorTitle: 'தேடல் தோல்வியுற்றது',
+        errorDescription: 'இந்த நேரத்தில் அரசு திட்டங்களைப் பெற முடியவில்லை. தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.',
     },
   },
 };

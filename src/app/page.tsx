@@ -5,6 +5,7 @@ import { SidebarInset } from '@/components/ui/sidebar';
 import Header from '@/components/layout/header';
 import ImageUploader from '@/components/dashboard/image-uploader';
 import WeatherWidget from '@/components/dashboard/weather-widget';
+import GovernmentSchemes from '@/components/dashboard/government-schemes';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ClipboardList } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
@@ -35,7 +36,7 @@ export default function DashboardPage() {
                 </div>
                 <div className="flex flex-col gap-6">
                   <WeatherWidget />
-                  <Card className="bg-card/70 backdrop-blur-lg">
+                   <Card className="bg-card/70 backdrop-blur-lg">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                       <CardTitle className="text-base font-medium">
                         {getTranslation('dashboard.quickGuide')}
@@ -51,6 +52,9 @@ export default function DashboardPage() {
                     </CardContent>
                   </Card>
                 </div>
+              </div>
+              <div className="mt-6">
+                <GovernmentSchemes />
               </div>
             </main>
         </div>

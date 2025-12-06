@@ -45,6 +45,11 @@ import {
     type GetFarmingRecommendationsInput,
     type GetFarmingRecommendationsOutput,
 } from '@/ai/flows/get-farming-recommendations';
+import {
+    getGovernmentSchemes as getGovernmentSchemesFlow,
+    type GetGovernmentSchemesInput,
+    type GetGovernmentSchemesOutput,
+} from '@/ai/flows/get-government-schemes';
 
 
 export async function analyzeCropImage(
@@ -222,6 +227,25 @@ export async function getFarmingRecommendations(
     return {
       success: false,
       error: 'Failed to get farming recommendations. Please try again.',
+    };
+  }
+}
+
+export async function getGovSchemes(
+  input: GetGovernmentSchemesInput
+): Promise<{
+  success: boolean;
+  data?: GetGovernmentSchemesOutput;
+  error?: string;
+}> {
+  try {
+    const result = await getGovernmentSchemesFlow(input);
+    return { success: true, data: result };
+  } catch (error) {
+    console.error('Error getting government schemes:', error);
+    return {
+      success: false,
+      error: 'Failed to get government schemes. Please try again.',
     };
   }
 }
