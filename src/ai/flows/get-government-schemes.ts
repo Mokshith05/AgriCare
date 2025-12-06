@@ -48,7 +48,7 @@ const prompt = ai.definePrompt({
   
   **Instructions:**
   1.  Search official Indian government portals like **agriculture.gov.in**, **farmer.gov.in**, and **gem.gov.in** for agricultural schemes.
-  2.  Prioritize schemes that are currently active and relevant to the specified crop and location.
+  2.  Prioritize schemes that are **new, recently updated, or currently active** and relevant to the specified crop and location.
   3.  Extract the scheme name, a brief description, key benefits, eligibility criteria, and a direct URL if available.
   4.  Do not use mock or placeholder data. If no relevant schemes are found, return an empty list.
   5.  The entire response, including all text, must be in the specified language: {{{language}}}
