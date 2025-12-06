@@ -29,8 +29,8 @@ export async function textToSpeech(input: TextToSpeechInput): Promise<TextToSpee
 // Map language codes to voice names
 const voiceMap: Record<string, string> = {
   en: 'Algenib',    // English
-  hi: 'gemini-hi-IN', // Hindi
-  te: 'gemini-te-IN', // Telugu
+  hi: 'Achernar', // Hindi
+  te: 'Fomalhaut', // Telugu
   ta: 'Alpheratz',   // Tamil
 };
 
