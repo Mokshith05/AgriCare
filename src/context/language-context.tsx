@@ -67,6 +67,10 @@ const translations: Record<string, Record<string, any>> = {
       addLogButton: 'Add Log',
       recentActivities: 'Recent Activities',
       noActivities: 'No activities logged yet.'
+    },
+    chatbot: {
+      title: 'AI Assistant',
+      placeholder: 'Ask me anything about farming...',
     }
   },
   hi: {
@@ -123,6 +127,10 @@ const translations: Record<string, Record<string, any>> = {
       addLogButton: 'लॉग जोड़ें',
       recentActivities: 'हाल की गतिविधियाँ',
       noActivities: 'अभी तक कोई गतिविधि लॉग नहीं की गई है।'
+    },
+    chatbot: {
+      title: 'एआई सहायक',
+      placeholder: 'खेती के बारे में कुछ भी पूछें...',
     }
   },
   te: {
@@ -179,6 +187,10 @@ const translations: Record<string, Record<string, any>> = {
       addLogButton: 'లాగ్ జోడించండి',
       recentActivities: 'ఇటీవలి కార్యకలాపాలు',
       noActivities: 'ఇంకా కార్యకలాపాలు లాగ్ చేయబడలేదు.'
+    },
+    chatbot: {
+      title: 'AI సహాయకుడు',
+      placeholder: 'వ్యవసాయం గురించి ఏదైనా అడగండి...',
     }
   },
   ta: {
@@ -235,6 +247,10 @@ const translations: Record<string, Record<string, any>> = {
       addLogButton: 'பதிவைச் சேர்',
       recentActivities: 'சமீபத்திய செயல்பாடுகள்',
       noActivities: 'செயல்பாடுகள் எதுவும்まだ பதிவு செய்யப்படவில்லை.'
+    },
+    chatbot: {
+        title: 'AI உதவியாளர்',
+        placeholder: 'விவசாயம் பற்றி எதுவும் கேளுங்கள்...',
     }
   },
 };
